@@ -41,4 +41,12 @@ public class AvengerController {
         theAvengerService.save(theAvenger);
         return "redirect:/avengers/list";
     }
+
+    @GetMapping("/edit/{id}")
+    public String editAvenger(@PathVariable("id") int id,Model theModel){
+        Avenger theAvenger = theAvengerService.getById(id);
+        theModel.addAttribute("avenger",theAvenger);
+
+        return "avenger/avenger-form";
+    }
 }
