@@ -49,4 +49,10 @@ public class AvengerController {
 
         return "avenger/avenger-form";
     }
+
+    @GetMapping("/delete/{id}")
+    public String deleteAvenger(@PathVariable("id") int id,Model theModel){
+        theAvengerService.deleteById(id);
+        return "redirect:/avengers/list";
+    }
 }

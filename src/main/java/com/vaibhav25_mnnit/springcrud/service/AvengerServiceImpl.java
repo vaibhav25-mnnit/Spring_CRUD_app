@@ -46,6 +46,6 @@ public class AvengerServiceImpl implements AvengerService {
 
     @Override
     public void deleteById(int id) {
-
+        theAvengerRepository.deleteById(id);
     }
 }
