@@ -22,7 +22,6 @@ public class AvengerServiceImpl implements AvengerService {
     @Override
     public List<Avenger> getAll() {
         List<Avenger> theAvengers = theAvengerRepository.findAll();
-        System.out.println(theAvengers);
         return theAvengers;
     }
 
@@ -37,13 +36,12 @@ public class AvengerServiceImpl implements AvengerService {
         else {
             throw new RuntimeException("Did not find employee id - " + id);
         }
-        System.out.println(theAvenger);
         return theAvenger;
     }
 
     @Override
-    public void save(int id) {
-
+    public void save(Avenger theAvenger) {
+        theAvengerRepository.save(theAvenger);
     }
 
     @Override

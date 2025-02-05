@@ -10,7 +10,7 @@ public interface AvengerService {
 
     Avenger getById(int id);
 
-    void save(int id);
+    void save(Avenger theAvenger);
 
     void deleteById(int id);
 }
